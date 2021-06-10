@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class CrimeListFragment extends Fragment {
@@ -63,9 +64,10 @@ public class CrimeListFragment extends Fragment {
         private Crime mCrime;
 
         public void bindCrime(Crime crime) {
+            SimpleDateFormat formatter = new SimpleDateFormat("E, MM dd, yyyy");
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
-            mDateTextView.setText(mCrime.getDate().toString());
+            mDateTextView.setText(formatter.format(mCrime.getDate()));
             mSolvedCheckBox.setChecked(mCrime.isSolved());
         }
 
