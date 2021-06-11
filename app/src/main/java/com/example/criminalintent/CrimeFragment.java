@@ -26,7 +26,7 @@ public class CrimeFragment extends Fragment {
     private static final String ARG_CRIME_ID = "crime_id";
     private static final String DIALOG_DATE = "DialogDate";
 
-    private static final SimpleDateFormat formatter = new SimpleDateFormat("EEE, MM dd, yyyy");
+    private static final SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMM dd, yyyy");
 
     private static final int  REQUEST_DATE = 0;
 
