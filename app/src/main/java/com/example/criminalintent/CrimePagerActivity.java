@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -14,7 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.List;
 import java.util.UUID;
 
-public class CrimePagerActivity extends FragmentActivity {
+public class CrimePagerActivity extends AppCompatActivity {
 
     private static final String EXTRA_CRIME_ID = "com.bignerdranch.android.criminalintent.crime_id";
 
