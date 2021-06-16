@@ -9,6 +9,17 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private String mSuspect;
+    private String mPhone;
+
+    public Crime() {
+        this(UUID.randomUUID());
+    }
+
+    public Crime(UUID id) {
+        mId = id;
+        mDate = new Date();
+    }
 
     public Date getDate() {
         return mDate;
@@ -26,6 +37,14 @@ public class Crime {
         this.mSolved = solved;
     }
 
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
+
     public UUID getId() {
         return mId;
     }
@@ -38,12 +57,15 @@ public class Crime {
         this.mTitle = title;
     }
 
-    public Crime() {
-        this(UUID.randomUUID());
+    public String getPhone() {
+        return mPhone;
     }
 
-    public Crime(UUID id) {
-        mId = id;
-        mDate = new Date();
+    public void setPhone(String phone) {
+        mPhone = phone;
+    }
+
+    public String getPhotoFileName() {
+        return "IMG_" + getId().toString() + ".jpg";
     }
 }

@@ -30,6 +30,7 @@ public class CrimeListFragment extends Fragment {
 
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
+    private static int itemPosition;
     private boolean mSubtitleVisible;
 
     private TextView mNoCrimeTextView;
@@ -139,7 +140,7 @@ public class CrimeListFragment extends Fragment {
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
             mAdapter.setCrimes(crimes);
-            mAdapter.notifyDataSetChanged();
+            mAdapter.notifyItemChanged(itemPosition);
         }
 
         updateSubtitle();
@@ -175,6 +176,7 @@ public class CrimeListFragment extends Fragment {
         @Override
         public void onClick(View v) {
             Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
+            itemPosition = getAdapterPosition();
             startActivity(intent);
         }
     }
